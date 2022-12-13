@@ -70,7 +70,7 @@ We divide the experiments based on the type of partition used and the type of in
 
   
 
-Sedona offers mainly two kinds of partioning algorithms using the following data structures:
+Sedona mainly offers two kinds of partioning algorithms using the following data structures:
 
 - KDB-Tree
 
