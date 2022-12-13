@@ -5,11 +5,11 @@
 
 The following repository contains experiments run on both a 4-node cluster and on a single-node for 3 types of queries:
 
-- K Nearest Neighbor query
+- K Nearest Neighbor query (`KNNQuery.SpatialKnnQuery`)
 
-- Range query
+- Range query (`RangeQuery.SpatialRangeQuery`)
 
-- Spatial Join query
+- Spatial Join query (`JoinQuery.SpatialJoinQuery`)
 
   
   
