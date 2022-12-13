@@ -1,0 +1,4 @@
+size,single_node: time(s),cluster: time(s)
+1k,0.174,0.094
+10k,0.244,0.137
+100k,0.843,0.474
