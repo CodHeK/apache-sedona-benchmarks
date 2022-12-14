@@ -1,0 +1,4 @@
+size,no_index: time(s),r_tree_index: time(s)
+1k,0.228,0.142
+10k,0.195,0.161
+100k,0.289,0.303
