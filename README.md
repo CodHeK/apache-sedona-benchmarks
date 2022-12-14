@@ -20,20 +20,16 @@ The following repository contains experiments run on both a 4-node cluster and o
 
 #### 1. Creating datasets:
 
-We use three sizes 1K, 10K, 100K for benchmarking. Using the `head` command we create different sized chunks of the complete data.
+We use different sized dataset of points & polygons for benchmarking (as shown below). Using the `head` command we create different sized chunks of the complete data.
 
 ```
 Points wkt file:
 
-$ head -1000 /all_points_1K.wkt
-$ head -10000 /all_points_10K.wkt
-$ head -100000 /all_points_100K.wkt
+$ head -n /all_points_n.wkt  // n = 1K, 5K, 10K, 25K, 50K, 100K
 
 Similarly for Polygons wkt file:
 
-$ head -1000 /all_polygons_1K.wkt
-$ head -10000 /all_polygons_10K.wkt
-$ head -100000 /all_polygons_100K.wkt
+$ head -n /all_polygons_n.wkt // n = 1K, 5K, 10K, 25K, 50K, 100K
 ```
 
 #### 2. Correcting the format:
