@@ -97,3 +97,26 @@ utils.plot(
     '../benchmarks/range/overall/points/overall_comparision_r_tree_index.csv',
     '../benchmarks/range/overall/points/overall_comparision_r_tree_index.png'
 )
+
+
+# Polygons: No index
+utils.plot(
+    'Polygons: Cluster v/s Single-node : No index',
+    '../benchmarks/range/overall/polygons/overall_comparision_no_index.csv',
+    '../benchmarks/range/overall/polygons/overall_comparision_no_index.png'
+)
+
+# Polygons: Quad-Tree index
+utils.plot(
+    'Polygons: Cluster v/s Single-node : Quad-Tree index',
+    '../benchmarks/range/overall/polygons/overall_comparision_quad_tree_index.csv',
+    '../benchmarks/range/overall/polygons/overall_comparision_quad_tree_index.png'
+)
+
+# Polygons: R-Tree index
+utils.plot(
+    'Polygons: Cluster v/s Single-node : R-Tree index',
+    '../benchmarks/range/overall/polygons/overall_comparision_r_tree_index.csv',
+    '../benchmarks/range/overall/polygons/overall_comparision_r_tree_index.png'
+)
+

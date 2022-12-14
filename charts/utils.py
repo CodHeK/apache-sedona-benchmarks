@@ -6,7 +6,14 @@ from IPython.display import display
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+x = {
+    '1k': 1000,
+    '5k': 5000,
+    '10k': 10000,
+    '25k': 25000,
+    '50k': 50000,
+    '100k': 100000
+}
 
 def plot(title, path, img_path):
     df = pd.read_csv(path, na_values='NaN')
@@ -23,20 +30,17 @@ def plot(title, path, img_path):
         extra_rows.append(row)
     
     for row in extra_rows:
-        df = pd.concat([df, pd.DataFrame(row, index=[0])])
+        df = pd.concat([df, pd.DataFrame(row, index=[len(df)])])
 
-    df['size'] = [ 1000, 10000, 100000, 5000, 25000, 50000 ]
+    df['size'] = [ x[item] for item in df['size'] ]
     df.sort_values('size', inplace = True, ascending=True)
 
     df = pd.DataFrame(data = df.values, columns= df.columns, dtype='float32')
 
     for col in df.columns[1:]:
-        df[col] = df[col].interpolate(method='spline', order=2, limit_direction='both')
+        df[col] = df[col].interpolate(method='spline', order = 2, limit_direction='both')
 
-    df['size'] = [ '1k', '5k', '10k', '25k', '50k', '100k' ]
-
-    # pd.options.display.max_columns = None
-    # display(df)
+    df['size'] = x.keys()
 
     df.set_index('size').plot(title=title)
     plt.savefig(img_path)
