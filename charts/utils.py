@@ -15,7 +15,7 @@ x = {
     '100k': 100000
 }
 
-def plot(title, path, img_path):
+def plot_size(title, path, img_path):
     df = pd.read_csv(path, na_values='NaN')
 
     extra_sizes = [ '5k', '25k', '50k' ]
@@ -44,3 +44,11 @@ def plot(title, path, img_path):
 
     df.set_index('size').plot(title=title)
     plt.savefig(img_path)
+    plt.close()
+
+
+def plot_k(title, path, img_path):
+    df = pd.read_csv(path)
+    df.set_index('k').plot(title=title)
+    plt.savefig(img_path)
+    plt.close()
