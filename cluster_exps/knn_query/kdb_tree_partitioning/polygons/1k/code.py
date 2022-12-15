@@ -12,7 +12,6 @@ from shapely.geometry import Polygon
 import time, pprint
 
 '''
-jia.yu1@wsu.edu
 spark-submit --master yarn --jars hdfs:/data/geotools-wrapper-1.1.0-25.2.jar,hdfs:/data/sedona-python-adapter-3.0_2.12-1.2.0-incubating.jar code.py --deploy-mode cluster
 '''
 

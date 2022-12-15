@@ -9,12 +9,12 @@ register(db)
 cursor = db.cursor()
 
 def join(t1, t2):
-    sql = 'SELECT COUNT(*) FROM {0} as points_table JOIN {1} as polygon_table ON ST_Contains(polygon_table.polygon, points_table.point)'.format(t1, t2)
+    sql = 'SELECT * FROM {0} as points_table JOIN {1} as polygon_table ON ST_Contains(polygon_table.polygon, points_table.point)'.format(t1, t2)
     pd.read_sql(sql, db)
 
 
 t1 = 'all_points_1K'
-t2 = 'all_source_10K'
+t2 = 'all_source_100K'
 len = 10000
 
 output_file = open('join.csv', 'w+')

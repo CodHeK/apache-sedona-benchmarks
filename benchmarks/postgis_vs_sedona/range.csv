@@ -1,0 +1,4 @@
+size,sedona: no-index : time(s),sedona: r-tree-index : time(s),postgis: no-index : time(s),postgis: r-tree-index : time(s)
+1k,3.616,3.237,12.874,12.119
+10k,25.422,24.161,53.878,53.382
+100k,203.376,193.288,684.08,602.584

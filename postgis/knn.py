@@ -18,7 +18,7 @@ k_vals = [ 1, 5, 10, 20, 30, 50, 100, 500, 1000 ]
 coords = [73.512247, 4.083805]
 
 def knn_points(t, k):
-    sql = "SELECT ST_Distance(point, 'SRID=4326;POINT({0} {1})'::geometry) as d FROM {2} ORDER BY point <-> 'SRID=4326;POINT({0} {1})'::geometry LIMIT {3}".format(coords[0], coords[1], t, k)
+    sql = "SELECT * FROM {2} ORDER BY point <-> 'SRID=4326;POINT({0} {1})'::geometry LIMIT {3}".format(coords[0], coords[1], t, k)
     pd.read_sql(sql, db)
 
 t = 'all_points_1K'
@@ -57,7 +57,7 @@ for k in k_vals:
 polygon = open("../sedona_osm_data/knn_polygon.tsv", "r").read()
 
 def knn_polygon(t, k):
-    sql = "SELECT ST_Distance(polygon, (ST_SetSRID(ST_GeomFromText('{2}'), 4326))) as d FROM {0} ORDER BY polygon <-> (ST_SetSRID(ST_GeomFromText('{2}'), 4326)) LIMIT {1}".format(t, k, polygon)
+    sql = "SELECT * FROM {0} ORDER BY polygon <-> (ST_SetSRID(ST_GeomFromText('{2}'), 4326)) LIMIT {1}".format(t, k, polygon)
     pd.read_sql(sql, db)
 
 t = 'all_source_1K'
