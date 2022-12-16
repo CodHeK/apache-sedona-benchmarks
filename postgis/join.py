@@ -14,8 +14,8 @@ def join(t1, t2):
 
 
 t1 = 'all_points_1K'
-t2 = 'all_source_100K'
-len = 10000
+t2 = 'all_source_10K'
+len = 1000
 
 output_file = open('join.csv', 'w+')
 pp = pprint.PrettyPrinter(indent=4, compact=True, stream=output_file)

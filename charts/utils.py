@@ -47,6 +47,12 @@ def plot_size(title, path, img_path):
     plt.close()
 
 
+def plot_comparision(title, path, img_path):
+    df = pd.read_csv(path)
+    df.plot(x='query_type', y=df.columns[1:], title=title, kind='bar', rot=0)
+    plt.savefig(img_path)
+    plt.close()
+
 def plot_k(title, path, img_path):
     df = pd.read_csv(path)
     df.set_index('k').plot(title=title)

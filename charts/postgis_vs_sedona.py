@@ -23,3 +23,9 @@ utils.plot_size(
     '../benchmarks/postgis_vs_sedona/range.csv',
     '../benchmarks/postgis_vs_sedona/plots/range.png'
 )
+
+utils.plot_comparision(
+    'Overall: Sedona v/s PostGIS : 10K Polygons',
+    '../benchmarks/postgis_vs_sedona/overall.csv',
+    '../benchmarks/postgis_vs_sedona/plots/overall.png'
+)

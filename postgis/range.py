@@ -11,37 +11,37 @@ cursor = db.cursor()
 envelope = (-85.01, -60.01, 34.01, 50.01)
 
 
-# '''
-#     Points:
-# '''
-# def range_query_point(t):
-#     sql = "SELECT COUNT(*) FROM {0} WHERE ST_Intersects(point, (ST_SetSRID(ST_Envelope('LINESTRING({1} {2}, {3} {4})'::geometry), 4326)))".format(t, *envelope)
-#     pd.read_sql(sql, db)
+'''
+    Points:
+'''
+def range_query_point(t):
+    sql = "SELECT COUNT(*) FROM {0} WHERE ST_Intersects(point, (ST_SetSRID(ST_Envelope('LINESTRING({1} {2}, {3} {4})'::geometry), 4326)))".format(t, *envelope)
+    pd.read_sql(sql, db)
 
 
-# t = 'all_points_1K'
-# len = 1000
+t = 'all_points_1K'
+len = 1000
 
-# output_file = open('range_points.csv', 'w+')
-# pp = pprint.PrettyPrinter(indent=4, compact=True, stream=output_file)
-
-
-# pp.pprint("No index")
-# utils.drop_index(db, cursor, t, 'point')
-
-# s = time.time()
-# range_query_point(t)
-# d = time.time() - s
-# pp.pprint(str(len) + "," + str(round(d, 3)))
+output_file = open('range_points.csv', 'w+')
+pp = pprint.PrettyPrinter(indent=4, compact=True, stream=output_file)
 
 
-# pp.pprint("R-Tree index")
-# utils.create_index(db, cursor, t, 'point')
+pp.pprint("No index")
+utils.drop_index(db, cursor, t, 'point')
 
-# s = time.time()
-# range_query_point(t)
-# d = time.time() - s
-# pp.pprint(str(len) + "," + str(round(d, 3)))
+s = time.time()
+range_query_point(t)
+d = time.time() - s
+pp.pprint(str(len) + "," + str(round(d, 3)))
+
+
+pp.pprint("R-Tree index")
+utils.create_index(db, cursor, t, 'point')
+
+s = time.time()
+range_query_point(t)
+d = time.time() - s
+pp.pprint(str(len) + "," + str(round(d, 3)))
 
 
 

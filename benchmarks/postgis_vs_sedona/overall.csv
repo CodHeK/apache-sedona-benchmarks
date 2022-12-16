@@ -1,0 +1,4 @@
+query_type,sedona: time(s),postgis: time(s)
+join,25.345,143.185
+knn,357.488,26.534
+range,24.161,53.382
