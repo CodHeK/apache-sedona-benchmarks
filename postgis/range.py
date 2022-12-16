@@ -4,6 +4,7 @@ from postgis.psycopg import register
 import time, pprint
 import pandas as pd
 
+# Edit your postgis server credentials here
 db = psycopg2.connect(dbname="benchmark", user="postgres", password="sour punk")
 register(db)
 cursor = db.cursor()

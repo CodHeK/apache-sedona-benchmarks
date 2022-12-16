@@ -6,6 +6,7 @@ import pandas as pd
 from shapely import wkt
 import numpy as np
 
+# Edit your postgis server credentials here
 db = psycopg2.connect(dbname="benchmark", user="postgres", password="sour punk")
 register(db)
 cursor = db.cursor()

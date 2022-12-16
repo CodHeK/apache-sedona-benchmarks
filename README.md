@@ -88,3 +88,8 @@ Additionally, we can index the spatial data using built-in algorithms provided b
   
 
 All the benchmarks are kept in the `/benchmarks` folder based on the query type.
+
+
+### Running postgis:
+
+Make sure to have postgres installed and a server running.
